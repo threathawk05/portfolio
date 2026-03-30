@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amaan Akbar Khojani | Cybersecurity Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a0f1e;
+    --navy-mid: #0f1729;
+    --navy-light: #162040;
+    --accent: #00c8ff;
+    --accent2: #0062ff;
+    --accent-glow: rgba(0,200,255,0.15);
+    --white: #f0f4ff;
+    --muted: #7a8aaa;
+    --border: rgba(0,200,255,0.12);
+    --card: rgba(15,23,41,0.8);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── BACKGROUND ─── */
+  body::before {
+    content:'';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 10% 20%, rgba(0,98,255,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 90% 80%, rgba(0,200,255,0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5vw;
+    background: rgba(10,15,30,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent) !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 4px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--accent-glow) !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    padding: 8rem 8vw 4rem;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--accent);
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero h1 .highlight {
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 480px;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .badge {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    background: rgba(255,255,255,0.03);
+    letter-spacing: 0.03em;
+  }
+
+  .badge.active {
+    border-color: rgba(0,200,255,0.4);
+    color: var(--accent);
+    background: var(--accent-glow);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    background: var(--accent2);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--border);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--accent); background: var(--accent-glow); }
+
+  /* ─── HERO PHOTO ─── */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .photo-frame {
+    position: relative;
+    width: 340px;
+    height: 420px;
+  }
+
+  .photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent2), var(--accent), transparent 60%);
+    z-index: 0;
+  }
+
+  .photo-frame::after {
+    content: '';
+    position: absolute;
+    top: 16px; left: 16px; right: -16px; bottom: -16px;
+    border: 1px solid rgba(0,200,255,0.2);
+    border-radius: 12px;
+    z-index: -1;
+  }
+
+  .photo-frame img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 11px;
+    display: block;
+  }
+
+  .status-pill {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--navy-mid);
+    border: 1px solid rgba(0,200,255,0.3);
+    padding: 0.55rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #4dffb0;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 2;
+  }
+
+  .status-pill::before {
+    content: '';
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #4dffb0;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    position: relative;
+    z-index: 1;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 5rem 8vw;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .section-divider {
+    width: 48px; height: 3px;
+    background: linear-gradient(90deg, var(--accent2), var(--accent));
+    border-radius: 2px;
+    margin-bottom: 3rem;
+  }
+
+  /* ─── STATS BAR ─── */
+  .stats-bar {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 2rem;
+    gap: 1rem;
+    margin: 0 8vw;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 0.5rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── ABOUT ─── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--muted);
+    margin-bottom: 1rem;
+    font-weight: 300;
+    font-size: 0.98rem;
+  }
+
+  .about-text p strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .info-table {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .info-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1rem;
+    font-size: 0.88rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.8rem;
+  }
+
+  .info-key {
+    color: var(--muted);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+
+  .info-val { color: var(--white); }
+  .info-val a { color: var(--accent); text-decoration: none; }
+  .info-val a:hover { text-decoration: underline; }
+
+  /* ─── SKILLS ─── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.6rem;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .skill-card:hover {
+    border-color: rgba(0,200,255,0.35);
+    transform: translateY(-3px);
+  }
+
+  .skill-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .skill-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .skill-tag {
+    font-size: 0.73rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(0,200,255,0.07);
+    border: 1px solid rgba(0,200,255,0.15);
+    border-radius: 3px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  /* ─── EXPERIENCE ─── */
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent2), var(--accent), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 8px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--navy);
+    box-shadow: 0 0 10px var(--accent);
+  }
+
+  .timeline-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .timeline-company {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .timeline-period {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.7rem;
+    background: var(--accent-glow);
+    border: 1px solid rgba(0,200,255,0.25);
+    border-radius: 100px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  .timeline-role {
+    font-size: 0.88rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  .timeline-list {
+    list-style: none;
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .timeline-list li {
+    font-size: 0.88rem;
+    color: var(--muted);
+    padding-left: 1rem;
+    position: relative;
+    font-weight: 300;
+  }
+
+  .timeline-list li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* ─── PROJECTS ─── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.8rem;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent2), var(--accent));
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .project-card:hover {
+    border-color: rgba(0,200,255,0.3);
+    transform: translateY(-4px);
+  }
+
+  .project-card:hover::before { opacity: 1; }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.8rem;
+  }
+
+  .project-icon { font-size: 1.4rem; }
+
+  .project-link {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .project-link:hover { color: var(--accent); }
+
+  .project-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+
+  .project-card p {
+    font-size: 0.87rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.55rem;
+    background: rgba(0,98,255,0.12);
+    border: 1px solid rgba(0,98,255,0.25);
+    border-radius: 3px;
+    color: #7aacff;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+
+  /* ─── EDUCATION ─── */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .edu-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.8rem;
+    backdrop-filter: blur(10px);
+    position: relative;
+  }
+
+  .edu-year {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .edu-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-school {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+  }
+
+  .edu-detail {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .edu-grade {
+    display: inline-block;
+    margin-top: 0.8rem;
+    font-size: 0.78rem;
+    padding: 0.25rem 0.7rem;
+    background: rgba(77,255,176,0.08);
+    border: 1px solid rgba(77,255,176,0.2);
+    border-radius: 100px;
+    color: #4dffb0;
+    font-weight: 600;
+  }
+
+  /* ─── CERTS ─── */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .cert-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.2rem 1.4rem;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.2s;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .cert-card:hover { border-color: rgba(0,200,255,0.3); }
+
+  .cert-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .cert-body {}
+
+  .cert-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+  }
+
+  .cert-issuer {
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  /* ─── LANGUAGES ─── */
+  .lang-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+
+  .lang-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+
+  .lang-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  .lang-level {
+    font-size: 0.78rem;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.8rem;
+  }
+
+  .lang-bar-track {
+    height: 4px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .lang-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent2), var(--accent));
+    border-radius: 2px;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .contact-left h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .contact-left p {
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  .contact-links {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+    color: var(--white);
+  }
+
+  .contact-item:hover {
+    border-color: rgba(0,200,255,0.35);
+    transform: translateX(4px);
+  }
+
+  .contact-item-icon {
+    width: 36px; height: 36px;
+    background: var(--accent-glow);
+    border: 1px solid rgba(0,200,255,0.2);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .contact-item-text {
+    flex: 1;
+  }
+
+  .contact-item-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .contact-item-val {
+    font-size: 0.9rem;
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .contact-right {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .contact-right h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-right p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .avail-grid {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .avail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.88rem;
+    padding: 0.7rem 1rem;
+    background: rgba(255,255,255,0.02);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+  }
+
+  .avail-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #4dffb0;
+    flex-shrink: 0;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 2rem 8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  footer p {
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  footer p span { color: var(--accent); }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  /* ─── ANIMATIONS ─── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeIn 0.7s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in:nth-child(1) { animation-delay: 0.1s; }
+  .fade-in:nth-child(2) { animation-delay: 0.2s; }
+  .fade-in:nth-child(3) { animation-delay: 0.3s; }
+  .fade-in:nth-child(4) { animation-delay: 0.4s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 7rem 6vw 4rem; text-align: center; }
+    .hero-sub { margin: 0 auto 2rem; }
+    .hero-badges { justify-content: center; }
+    .hero-actions { justify-content: center; }
+    .hero-visual { display: none; }
+    .about-grid, .contact-wrapper, .edu-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .certs-grid { grid-template-columns: 1fr 1fr; }
+    .lang-grid { grid-template-columns: 1fr 1fr; }
+    .stats-bar { grid-template-columns: 1fr 1fr; margin: 0 6vw; }
+    .stat-item:nth-child(2) { border-right: none; }
+    .nav-links { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .skills-grid, .certs-grid, .lang-grid { grid-template-columns: 1fr; }
+    section { padding: 3.5rem 6vw; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Amaan<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-tag fade-in">Cybersecurity Professional</div>
+    <h1 class="fade-in">Amaan Akbar<br><span class="highlight">Khojani</span></h1>
+    <p class="hero-sub fade-in">MSc Sociotechnical Cybersecurity student at THI. Specialized in vulnerability assessment, penetration testing, threat intelligence, and GRC — seeking a working student role in Germany.</p>
+    <div class="hero-badges fade-in">
+      <span class="badge active">Available · 20h/week</span>
+      <span class="badge">Nürnberg, Germany</span>
+      <span class="badge">VAPT</span>
+      <span class="badge">SOC Analysis</span>
+      <span class="badge">Threat Intelligence</span>
+    </div>
+    <div class="hero-actions fade-in">
+      <a href="mailto:amankhojani592@gmail.com" class="btn-primary">✉ Get In Touch</a>
+      <a href="https://linkedin.com/in/amaan-khojani-807098255" target="_blank" class="btn-secondary">LinkedIn →</a>
+      <a href="https://github.com/threathawk05" target="_blank" class="btn-secondary">GitHub →</a>
+    </div>
+  </div>
+  <div class="hero-visual fade-in">
+    <div class="photo-frame">
+      <img src="Amaan.png" alt="Amaan Akbar Khojani" />
+      <div class="status-pill">Open to Work · Germany</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">4+</div>
+    <div class="stat-label">Internships</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">7+</div>
+    <div class="stat-label">Projects</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">6</div>
+    <div class="stat-label">Certifications</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">9.02</div>
+    <div class="stat-label">CGPA (BCA)</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About Me</div>
+  <div class="section-title">Who I Am</div>
+  <div class="section-divider"></div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a <strong>cybersecurity specialist</strong> currently pursuing my MSc in Sociotechnical Cybersecurity at Technische Hochschule Ingolstadt, Germany. My focus is on bridging the human and technical dimensions of security — from hands-on penetration testing to governance, risk, and compliance.</p>
+      <p>With experience across <strong>VAPT, threat analysis, incident response</strong>, and secure software development, I've contributed to security operations at multiple companies in India. I'm passionate about building secure systems and helping organizations understand their risk posture.</p>
+      <p>My goal is to grow within a German cybersecurity team — contributing real skills while continuing to develop expertise in SOC operations, digital forensics, and threat intelligence.</p>
+    </div>
+    <div>
+      <div class="info-table">
+        <div class="info-row">
+          <span class="info-key">Location</span>
+          <span class="info-val">Nürnberg, Germany</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Availability</span>
+          <span class="info-val">Working Student · 20h/week</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Email</span>
+          <span class="info-val"><a href="mailto:amankhojani592@gmail.com">amankhojani592@gmail.com</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Phone</span>
+          <span class="info-val">+49 15567 242532</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">LinkedIn</span>
+          <span class="info-val"><a href="https://linkedin.com/in/amaan-khojani-807098255" target="_blank">amaan-khojani-807098255</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">GitHub</span>
+          <span class="info-val"><a href="https://github.com/threathawk05" target="_blank">threathawk05</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Languages</span>
+          <span class="info-val">English (C1), German (B1–B2), Hindi, Gujarati</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Expertise</div>
+  <div class="section-title">Technical Skills</div>
+  <div class="section-divider"></div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">🛡️</div>
+      <h4>Cybersecurity</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Vulnerability Assessment</span>
+        <span class="skill-tag">Penetration Testing</span>
+        <span class="skill-tag">Threat Analysis</span>
+        <span class="skill-tag">Incident Response</span>
+        <span class="skill-tag">Network Security</span>
+        <span class="skill-tag">Web App Security</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📋</div>
+      <h4>GRC & Risk Management</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Risk Identification</span>
+        <span class="skill-tag">Internal Controls</span>
+        <span class="skill-tag">Compliance Support</span>
+        <span class="skill-tag">Business Process Analysis</span>
+        <span class="skill-tag">Documentation</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">💻</div>
+      <h4>Programming</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Java (OOP)</span>
+        <span class="skill-tag">PHP (Laravel)</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">HTML/CSS</span>
+        <span class="skill-tag">XML</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🔧</div>
+      <h4>Security Tools</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Kali Linux</span>
+        <span class="skill-tag">Metasploit</span>
+        <span class="skill-tag">Wireshark</span>
+        <span class="skill-tag">Network Scanning Tools</span>
+        <span class="skill-tag">Git/GitHub</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🖥️</div>
+      <h4>Platforms & Tools</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Linux Systems</span>
+        <span class="skill-tag">VMware</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Microsoft 365</span>
+        <span class="skill-tag">GitHub Actions</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🔍</div>
+      <h4>Specializations</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Digital Forensics</span>
+        <span class="skill-tag">Threat Intelligence</span>
+        <span class="skill-tag">SOC Operations</span>
+        <span class="skill-tag">Cryptography</span>
+        <span class="skill-tag">Secure Coding</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Career</div>
+  <div class="section-title">Work Experience</div>
+  <div class="section-divider"></div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <span class="timeline-company">BytesBizz Technology LLP</span>
+        <span class="timeline-period">07/2025 – 12/2025</span>
+      </div>
+      <div class="timeline-role">Junior VAPT Intern · Full-time · Rajkot, India</div>
+      <ul class="timeline-list">
+        <li>Conducted vulnerability assessments on web applications and network systems to identify security weaknesses.</li>
+        <li>Assisted in penetration testing including reconnaissance, scanning, and basic exploitation under supervision.</li>
+        <li>Analysed vulnerabilities and provided remediation recommendations aligned with security best practices.</li>
+        <li>Documented findings in structured security reports for developers and stakeholders.</li>
+        <li>Worked in a Linux environment using security tools to perform testing and analysis.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <span class="timeline-company">Codec Technologies</span>
+        <span class="timeline-period">01/2025 – 04/2025</span>
+      </div>
+      <div class="timeline-role">Security Analyst Intern · Full-time · Remote</div>
+      <ul class="timeline-list">
+        <li>Supported security assessments and vulnerability analysis of applications and systems.</li>
+        <li>Assisted in basic penetration testing and threat identification under guidance.</li>
+        <li>Worked with cybersecurity tools to understand threat detection and mitigation techniques.</li>
+        <li>Contributed to documentation and reporting of identified risks and security improvements.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <span class="timeline-company">Vault-Tec Security</span>
+        <span class="timeline-period">10/2024 – 12/2024</span>
+      </div>
+      <div class="timeline-role">Cybersecurity Intern · Part-time · Remote</div>
+      <ul class="timeline-list">
+        <li>Performed vulnerability scanning, penetration testing, and threat analysis on systems.</li>
+        <li>Gained hands-on experience in digital forensics and incident response processes.</li>
+        <li>Worked with cybersecurity tools in a Linux environment to support security operations.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-meta">
+        <span class="timeline-company">Prodigy Infotech</span>
+        <span class="timeline-period">11/2024</span>
+      </div>
+      <div class="timeline-role">Security Development Intern · Part-time · Remote</div>
+      <ul class="timeline-list">
+        <li>Developed a secure password generator using cryptographic algorithms and secure coding practices.</li>
+        <li>Implemented basic encryption techniques to enhance application security.</li>
+        <li>Conducted research on network defence strategies and ethical hacking concepts.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Portfolio</div>
+  <div class="section-title">Key Projects</div>
+  <div class="section-divider"></div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon">🔐</div>
+        <a href="https://github.com/threathawk05/Secure-File-Storage-System" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+      <h4>Secure File Storage System</h4>
+      <p>A Python-based application with a PyQt5 GUI for securely encrypting and decrypting files using strong cryptographic algorithms. Implements secure password handling via Argon2 hashing.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">PyQt5</span>
+        <span class="tech-tag">AES</span>
+        <span class="tech-tag">Argon2</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon">🖥️</div>
+        <a href="https://github.com/threathawk05/PRODIGY_CS_04" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+      <h4>Windows Keylogger (Security Research)</h4>
+      <p>A Python-based keylogger for educational and security analysis purposes, recording keystrokes with timestamps. Demonstrates system monitoring techniques and explores potential attack surfaces.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Security Research</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon">🔑</div>
+        <a href="https://github.com/threathawk05/VAULT_TEC_SECURITY" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+      <h4>Password Generator & Strength Checker</h4>
+      <p>A tool that generates secure, customizable passwords using four different algorithms and evaluates password strength with real-time feedback to promote better security practices.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Cryptography</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon">🚂</div>
+        <a href="https://github.com/threathawk05/Railway-Reservation-Project" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+      <h4>Railway Reservation System</h4>
+      <p>A Java-based application for train ticket booking, cancellation, and passenger management with secure authentication, database integration, and real-time availability tracking.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">Java</span>
+        <span class="tech-tag">MySQL</span>
+        <span class="tech-tag">JDBC</span>
+        <span class="tech-tag">Swing</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">Academic Background</div>
+  <div class="section-title">Education</div>
+  <div class="section-divider"></div>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-year">03/2026 – 10/2027</div>
+      <h4>MSc Sociotechnical Cybersecurity</h4>
+      <div class="edu-school">Technische Hochschule Ingolstadt · Germany</div>
+      <div class="edu-detail">Coursework: Principles of Security, Information & Product Security Management, Medical Security, IoT Security, Human Factors in Security, Network Security, Security Business Planning.</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">09/2021 – 05/2025</div>
+      <h4>Bachelor of Computer Application (Hons)</h4>
+      <div class="edu-school">Marwadi University · Rajkot, India</div>
+      <div class="edu-detail">Computer / Information Technology Administration and Management. Graduated with distinction.</div>
+      <div class="edu-grade">9.02 CGPA</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section>
+  <div class="section-label">Credentials</div>
+  <div class="section-title">Certifications</div>
+  <div class="section-divider"></div>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <div class="cert-icon">🏆</div>
+      <div class="cert-body">
+        <div class="cert-name">Junior Cybersecurity Analyst Career Path</div>
+        <div class="cert-issuer">Cisco Networking Academy · 02/2025</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🏆</div>
+      <div class="cert-body">
+        <div class="cert-name">The Cybersecurity Landscape</div>
+        <div class="cert-issuer">Splunk · 03/2025</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🏆</div>
+      <div class="cert-body">
+        <div class="cert-name">Cyber Threat Intelligence 101</div>
+        <div class="cert-issuer">ArcX · 10/2024</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🏆</div>
+      <div class="cert-body">
+        <div class="cert-name">SQL Injection Attacks</div>
+        <div class="cert-issuer">EC-Council · 10/2024</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🏆</div>
+      <div class="cert-body">
+        <div class="cert-name">Configure and Test Basic Network Connectivity</div>
+        <div class="cert-issuer">Cisco · 06/2023</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🏆</div>
+      <div class="cert-body">
+        <div class="cert-name">Certified Ethical Hacking Professional</div>
+        <div class="cert-issuer">Indian Cybersecurity Solutions · 08/2021</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGES -->
+<section>
+  <div class="section-label">Communication</div>
+  <div class="section-title">Language Proficiency</div>
+  <div class="section-divider"></div>
+  <div class="lang-grid">
+    <div class="lang-card">
+      <div class="lang-name">English</div>
+      <div class="lang-level">C1 — Advanced</div>
+      <div class="lang-bar-track"><div class="lang-bar-fill" style="width:90%"></div></div>
+    </div>
+    <div class="lang-card">
+      <div class="lang-name">German</div>
+      <div class="lang-level">B1–B2 — Professional</div>
+      <div class="lang-bar-track"><div class="lang-bar-fill" style="width:65%"></div></div>
+    </div>
+    <div class="lang-card">
+      <div class="lang-name">Hindi</div>
+      <div class="lang-level">Native</div>
+      <div class="lang-bar-track"><div class="lang-bar-fill" style="width:100%"></div></div>
+    </div>
+    <div class="lang-card">
+      <div class="lang-name">Gujarati</div>
+      <div class="lang-level">Native</div>
+      <div class="lang-bar-track"><div class="lang-bar-fill" style="width:100%"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrapper">
+    <div class="contact-left">
+      <div class="section-label">Let's Connect</div>
+      <h2>Ready to Contribute to Your Security Team</h2>
+      <p>I'm actively looking for a working student position (20h/week) in cybersecurity in Germany. Whether it's SOC, VAPT, GRC, or secure development — I'm ready to bring value from day one.</p>
+      <div class="contact-links">
+        <a href="mailto:amankhojani592@gmail.com" class="contact-item">
+          <div class="contact-item-icon">✉</div>
+          <div class="contact-item-text">
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-val">amankhojani592@gmail.com</div>
+          </div>
+        </a>
+        <a href="tel:+4915567242532" class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div class="contact-item-text">
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-val">+49 15567 242532</div>
+          </div>
+        </a>
+        <a href="https://linkedin.com/in/amaan-khojani-807098255" target="_blank" class="contact-item">
+          <div class="contact-item-icon">in</div>
+          <div class="contact-item-text">
+            <div class="contact-item-label">LinkedIn</div>
+            <div class="contact-item-val">amaan-khojani-807098255</div>
+          </div>
+        </a>
+        <a href="https://github.com/threathawk05" target="_blank" class="contact-item">
+          <div class="contact-item-icon">⌥</div>
+          <div class="contact-item-text">
+            <div class="contact-item-label">GitHub</div>
+            <div class="contact-item-val">threathawk05</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-right">
+      <h3>Open to Opportunities</h3>
+      <p>Currently based in Nürnberg, available for roles across Germany.</p>
+      <div class="avail-grid">
+        <div class="avail-item">
+          <div class="avail-dot"></div>
+          SOC Analyst (Working Student)
+        </div>
+        <div class="avail-item">
+          <div class="avail-dot"></div>
+          VAPT / Security Testing
+        </div>
+        <div class="avail-item">
+          <div class="avail-dot"></div>
+          GRC & Compliance Support
+        </div>
+        <div class="avail-item">
+          <div class="avail-dot"></div>
+          Secure Development Roles
+        </div>
+        <div class="avail-item">
+          <div class="avail-dot"></div>
+          Threat Intelligence Analyst
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Amaan Akbar Khojani</span> · Nürnberg, Germany</p>
+  <div class="footer-links">
+    <a href="mailto:amankhojani592@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/amaan-khojani-807098255" target="_blank">LinkedIn</a>
+    <a href="https://github.com/threathawk05" target="_blank">GitHub</a>
+  </div>
+</footer>
+
+</body>
+</html>
