@@ -16,7 +16,7 @@ export function ThemeProvider({ children }) {
       root.dataset.themeMode = mode;
       root.dataset.theme = mode === 'system' ? getSystemTheme() : mode;
       const themeColor = document.querySelector('meta[name="theme-color"]');
-      if (themeColor) themeColor.content = root.dataset.theme === 'dark' ? '#17201d' : '#f5f1e8';
+      if (themeColor) themeColor.content = root.dataset.theme === 'dark' ? '#101112' : '#f5f0ec';
     };
 
     applyTheme();

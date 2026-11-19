@@ -28,6 +28,10 @@ function TodoSocial({ label, item }) {
 }
 
 export default function HomePage({ onOpenResume }) {
+  const nameParts = profile.name.trim().split(/\s+/);
+  const firstName = nameParts.shift() || profile.name;
+  const familyName = nameParts.join(' ');
+
   return (
     <>
       <SEO
@@ -36,6 +40,10 @@ export default function HomePage({ onOpenResume }) {
       />
 
       <section className="hero container" id="top" aria-labelledby="hero-title">
+        <h1 className="hero-name-display" id="hero-title" aria-label={profile.name}>
+          <span aria-hidden="true">{firstName}</span>
+          <span className="hero-name-family" aria-hidden="true">{familyName}</span>
+        </h1>
         <div className="hero-copy">
           <div className="hero-terminal" role="group" aria-label="Profile status">
             <p className="hero-terminal-command">
@@ -46,7 +54,7 @@ export default function HomePage({ onOpenResume }) {
               <div><dt>Location</dt><dd>{profile.location}</dd></div>
             </dl>
           </div>
-          <h1 id="hero-title">{profile.headline}</h1>
+          <h2 className="hero-positioning">{profile.headline}</h2>
           <p className="hero-summary">{profile.summary}</p>
           <div className="hero-actions">
             <Link className="button button-solid" to="/contact">Contact me <span aria-hidden="true">↗</span></Link>

@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en" data-theme-mode="system" data-theme="light">
+<html lang="en" data-theme-mode="dark" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f5f1e8" />
+    <meta name="theme-color" content="#101112" />
     <meta name="description" content="Portfolio of Amaan Akbar Khojani, MSc Sociotechnical Cybersecurity student at Technische Hochschule Ingolstadt." />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Amaan Akbar Khojani · Cybersecurity" />
@@ -26,18 +26,18 @@
         const root = document.documentElement;
         const updateThemeColor = () => {
           const meta = document.querySelector('meta[name="theme-color"]');
-          if (meta) meta.content = root.dataset.theme === 'dark' ? '#17201d' : '#f5f1e8';
+          if (meta) meta.content = root.dataset.theme === 'dark' ? '#101112' : '#f5f0ec';
         };
         const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         try {
           const storedMode = localStorage.getItem('portfolio-theme');
-          const mode = ['light', 'dark', 'system'].includes(storedMode) ? storedMode : 'system';
+          const mode = ['light', 'dark', 'system'].includes(storedMode) ? storedMode : 'dark';
           root.dataset.themeMode = mode;
           root.dataset.theme = mode === 'system' ? systemTheme : mode;
           updateThemeColor();
         } catch {
-          root.dataset.themeMode = 'system';
-          root.dataset.theme = systemTheme;
+          root.dataset.themeMode = 'dark';
+          root.dataset.theme = 'dark';
           updateThemeColor();
         }
       })();
@@ -45,7 +45,7 @@
     <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
