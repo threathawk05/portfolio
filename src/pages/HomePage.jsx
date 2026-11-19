@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO.jsx';
 import SectionReveal from '../components/SectionReveal.jsx';
 import ProjectCard from '../components/ProjectCard.jsx';
+import InteractiveOrbit from '../components/InteractiveOrbit.jsx';
 import { certifications, education, languages } from '../data/credentials.js';
 import { experience } from '../data/experience.js';
 import { profile } from '../data/profile.js';
@@ -46,18 +47,7 @@ export default function HomePage({ onOpenResume }) {
           <p className="hero-note">Vulnerability assessment · SOC operations · Digital forensics</p>
         </div>
 
-        <figure className="hero-portrait">
-          <div className="portrait-frame">
-            <img
-              src={`${import.meta.env.BASE_URL}portrait.jpg`}
-              width="1080"
-              height="1456"
-              alt={`Portrait of ${profile.name}`}
-              fetchPriority="high"
-            />
-          </div>
-          <figcaption>{profile.institution} <span>·</span> Ingolstadt</figcaption>
-        </figure>
+        <InteractiveOrbit profile={profile} />
       </section>
 
       <div className="container">
