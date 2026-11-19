@@ -1,29 +1,49 @@
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import { profile } from '../data/profile.js';
+import { trapFocus } from '../lib/focus.js';
 import ThemeToggle from './ThemeToggle.jsx';
 
 const links = [
-  { label: 'About', to: '/#about' },
   { label: 'Experience', to: '/#experience' },
-  { label: 'Projects', to: '/projects' },
-  { label: 'Skills', to: '/#skills' },
+  { label: 'Projects', to: '/#projects' },
+  { label: 'Writing', to: '/#writing' },
+  { label: 'About', to: '/#about' },
 ];
 
 export default function SiteHeader({ onOpenResume, onOpenPalette }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuButtonRef = useRef(null);
+  const navRef = useRef(null);
 
-  const closeMenu = () => setIsMenuOpen(false);
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    if (isMenuOpen) requestAnimationFrame(() => menuButtonRef.current?.focus());
+  };
+
+  useEffect(() => {
+    if (!isMenuOpen) return undefined;
+    document.body.classList.add('nav-open');
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeMenu();
+        menuButtonRef.current?.focus();
+      } else {
+        trapFocus(event, navRef.current);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.classList.remove('nav-open');
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isMenuOpen]);
 
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link className="wordmark" to="/" onClick={closeMenu} aria-label={`${profile.name}, home`}>
-          <span className="wordmark-monogram" aria-hidden="true">A</span>
-          <span>Amaan Khojani</span>
-        </Link>
-
         <button
+          ref={menuButtonRef}
           className="icon-button menu-toggle"
           type="button"
           aria-expanded={isMenuOpen}
@@ -35,6 +55,7 @@ export default function SiteHeader({ onOpenResume, onOpenPalette }) {
         </button>
 
         <nav
+          ref={navRef}
           className={`primary-navigation ${isMenuOpen ? 'is-open' : ''}`}
           id="primary-navigation"
           aria-label="Primary navigation"
@@ -44,23 +65,35 @@ export default function SiteHeader({ onOpenResume, onOpenPalette }) {
               {link.label}
             </Link>
           ))}
-          <Link className="mobile-contact-link" to="/contact" onClick={closeMenu}>
-            Contact
-          </Link>
+          <div className="navigation-tools">
+            <button
+              className="command-shortcut"
+              type="button"
+              onClick={() => {
+                closeMenu();
+                onOpenPalette();
+              }}
+            >
+              Search <kbd>⌘K / Ctrl+K</kbd>
+            </button>
+            <button
+              className="button button-small button-outline"
+              type="button"
+              onClick={() => {
+                closeMenu();
+                onOpenResume();
+              }}
+            >
+              Preview résumé
+            </button>
+            <ThemeToggle />
+          </div>
         </nav>
 
         <div className="header-actions">
-          <ThemeToggle />
-          <button className="command-shortcut" type="button" onClick={onOpenPalette}>
-            <span>Search</span>
-            <kbd>⌘K<span className="shortcut-other"> / Ctrl+K</span></kbd>
-          </button>
-          <button className="button button-small button-outline" type="button" onClick={onOpenResume}>
-            Résumé
-          </button>
-          <Link className="button button-small button-solid header-contact" to="/contact">
-            Contact
-          </Link>
+          <a className="button button-small button-solid header-contact" href={`mailto:${profile.email}`} onClick={closeMenu}>
+            Contact <span aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
     </header>

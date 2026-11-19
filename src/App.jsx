@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import CommandPalette from './components/CommandPalette.jsx';
+import ProjectCursor from './components/ProjectCursor.jsx';
 import ResumeDialog from './components/ResumeDialog.jsx';
 import SiteFooter from './components/SiteFooter.jsx';
 import SiteHeader from './components/SiteHeader.jsx';
@@ -50,6 +51,7 @@ export default function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
+      <ProjectCursor />
       <SiteFooter />
       <CommandPalette
         isOpen={isPaletteOpen}

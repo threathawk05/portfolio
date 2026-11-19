@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { profile } from '../data/profile.js';
+import ThemeToggle from './ThemeToggle.jsx';
 
 function ProfileLink({ label, link }) {
   return link.href ? (
@@ -20,6 +21,7 @@ export default function SiteFooter() {
           <ProfileLink label="LinkedIn" link={profile.links.linkedin} />
           <Link to="/blog">Blog</Link>
         </div>
+        <ThemeToggle />
         <a className="back-to-top" href="#top">Back to top ↑</a>
       </div>
     </footer>
