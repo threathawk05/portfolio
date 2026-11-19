@@ -1,0 +1,38 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/projects"
+  to = "/projects/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/projects/vendor-risk-assessment"
+  to = "/projects/vendor-risk-assessment/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/projects/secure-file-storage"
+  to = "/projects/secure-file-storage/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/projects/railway-reservation"
+  to = "/projects/railway-reservation/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

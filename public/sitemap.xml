@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- TODO: Replace TODO-SET-VITE_SITE_URL.example with the deployed site origin. -->
+  <url><loc>https://TODO-SET-VITE_SITE_URL.example/</loc></url>
+  <url><loc>https://TODO-SET-VITE_SITE_URL.example/projects</loc></url>
+  <url><loc>https://TODO-SET-VITE_SITE_URL.example/projects/vendor-risk-assessment</loc></url>
+  <url><loc>https://TODO-SET-VITE_SITE_URL.example/projects/secure-file-storage</loc></url>
+  <url><loc>https://TODO-SET-VITE_SITE_URL.example/projects/railway-reservation</loc></url>
+  <url><loc>https://TODO-SET-VITE_SITE_URL.example/blog</loc></url>
+  <url><loc>https://TODO-SET-VITE_SITE_URL.example/contact</loc></url>
+</urlset>

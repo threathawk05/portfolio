@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    { "source": "/projects", "destination": "/projects/index.html" },
+    { "source": "/projects/vendor-risk-assessment", "destination": "/projects/vendor-risk-assessment/index.html" },
+    { "source": "/projects/secure-file-storage", "destination": "/projects/secure-file-storage/index.html" },
+    { "source": "/projects/railway-reservation", "destination": "/projects/railway-reservation/index.html" },
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/contact", "destination": "/contact/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

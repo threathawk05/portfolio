@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# TODO: Add the absolute sitemap URL after setting VITE_SITE_URL.
