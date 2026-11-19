@@ -37,14 +37,26 @@ export default function HomePage({ onOpenResume }) {
 
       <section className="hero container" id="top" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="eyebrow"><span className="status-dot" /> {profile.role} · {profile.location}</p>
+          <div className="hero-terminal" role="group" aria-label="Profile status">
+            <p className="hero-terminal-command">
+              <span aria-hidden="true">$</span> profile --status <span className="terminal-cursor" aria-hidden="true">█</span>
+            </p>
+            <dl>
+              <div><dt>Role</dt><dd>{profile.role}</dd></div>
+              <div><dt>Location</dt><dd>{profile.location}</dd></div>
+            </dl>
+          </div>
           <h1 id="hero-title">{profile.headline}</h1>
           <p className="hero-summary">{profile.summary}</p>
           <div className="hero-actions">
             <Link className="button button-solid" to="/contact">Contact me <span aria-hidden="true">↗</span></Link>
             <button className="button button-outline" type="button" onClick={onOpenResume}>Preview résumé</button>
           </div>
-          <p className="hero-note">Vulnerability assessment · SOC operations · Digital forensics</p>
+          <ul className="hero-stack" aria-label="Areas of experience">
+            <li>Vulnerability assessment</li>
+            <li>SOC operations</li>
+            <li>Digital forensics</li>
+          </ul>
         </div>
 
         <InteractiveOrbit profile={profile} />
